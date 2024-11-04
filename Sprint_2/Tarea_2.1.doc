@@ -1,0 +1,33 @@
+﻿- Ejercicio 1. Identificar un problema
+
+Queremos poder detectar un posible fallo en el sistema antes que ocurra, en este caso mi sistema será un motor y una transmisión.
+
+Es importante poder detectar un fallo antes que ocurra ya que se podría solucionar el problema antes que la maquina deje de funcionar en un momento no deseado, al saber que ocurrirá un fallo se puede programar la parada de la maquina de esta manera minimizar el impacto de del fallo.
+
+Para esto vamos a monitorizar diferentes variables del sistema para poder realizar predicciones.
+
+En el caso de motores y engranajes, los problemas más comunes suelen ser:
+
+• Desgaste o fallo de los engranajes.
+• Fallos de los rodamientos.
+• Desalineación de los componentes.
+• Sobrecalentamiento.
+
+Las variables a utilizar serian.
+
+• Temperatura: Monitorizaremos la temperatura para detectar cualquier cambio en la temperatura que pudiese ser ocasionado por algún problema en el sistema. por ejemplo, que no esté lubricado correctamente y esto genere fricción lo cual se podría ver reflejado en un cambio de temperatura.
+
+• Ciclo de trabajo (PWM): Con esta variable podremos ver a que capacidad está funcionando el motor, en este caso el PWM para nosotros será la potencia a la que está trabajando. esta variable va de 0% a 100%. Con esta variable podremos ver si el motor por algún motivo sale de su rango de funcionamiento normal.
+
+- Ejercicio 2. Escoger un algoritmo
+
+Para crear el modelo he decidido escoger un modelo de aprendizaje supervisado de regresión lineal múltiple.
+
+He decidido escoger este algoritmo porque tengo más de una variable a analizar.
+
+La idea con este modelo será poder relacionar la potencia y temperatura del sistema para determinar cómo van cambiando estas variables a futuro podría provocar un fallo.
+
+La salida de mi modelo será si el sistema se encuentra en valores normales o no.
+
+Este rango de valores normales se debe definir con muestras de funcionamiento correcto y funcionamiento incorrecto.
+
